@@ -37,21 +37,6 @@
 			"last 1 safari version"
 		]
 	},
-	"jest": {
-		"moduleFileExtensions": [
-			"ts",
-			"tsx",
-			"js"
-		],
-		"transform": {
-			"\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
-		},
-		"setupFiles": [
-			"raf/polyfill"
-		],
-		"testRegex": "/__tests__/.*\\.(ts|tsx|js)$",
-		"setupTestFrameworkScriptFile": "<rootDir>src/setupTests.ts"
-	},
 	"devDependencies": {
 		"@storybook/addon-actions": "^5.1.9",
 		"@storybook/addon-info": "^5.1.9",
