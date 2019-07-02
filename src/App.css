@@ -1,0 +1,13 @@
+.App {
+  /* background-color: yellowgreen; */
+  
+  display: flex;
+}
+
+.App .filler {
+  flex-grow: 1;
+}
+
+:root {
+
+}

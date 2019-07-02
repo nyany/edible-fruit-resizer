@@ -1,0 +1,71 @@
+{
+	"name": "resizer-component",
+	"version": "0.1.0",
+	"main": "./src/index.tsx",
+	"module": "./src/index.js",
+	"private": true,
+	"dependencies": {
+		"@types/jest": "24.0.15",
+		"@types/node": "12.0.10",
+		"@types/react": "16.8.22",
+		"@types/react-dom": "16.8.4",
+		"react": "^16.8.6",
+		"react-dom": "^16.8.6",
+		"react-scripts": "3.0.1",
+		"typescript": "3.5.2"
+	},
+	"scripts": {
+		"start": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook"
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"jest": {
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js"
+		],
+		"transform": {
+			"\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+		},
+		"setupFiles": [
+			"raf/polyfill"
+		],
+		"testRegex": "/__tests__/.*\\.(ts|tsx|js)$",
+		"setupTestFrameworkScriptFile": "<rootDir>src/setupTests.ts"
+	},
+	"devDependencies": {
+		"@storybook/addon-actions": "^5.1.9",
+		"@storybook/addon-info": "^5.1.9",
+		"@storybook/addon-links": "^5.1.9",
+		"@storybook/addons": "^5.1.9",
+		"@storybook/react": "^5.1.9",
+		"@types/enzyme": "^3.10.1",
+		"@types/enzyme-adapter-react-16": "^1.0.5",
+		"@types/storybook__react": "^4.0.2",
+		"awesome-typescript-loader": "^5.2.1",
+		"enzyme": "^3.10.0",
+		"enzyme-adapter-react-16": "^1.14.0",
+		"lorem-ipsum": "^2.0.3",
+		"react-docgen-typescript-loader": "^3.1.0",
+		"tslint": "^5.18.0"
+	}
+}
