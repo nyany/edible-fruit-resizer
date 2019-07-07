@@ -9,7 +9,7 @@ Component itself is inside `src/lib` folder. Storybook stories are inside `stori
 
 Usage example:
 
-```xml
+```tsx
 <div>
 	<Resizer
 		draggableAreaPosition={DraggableAreaPosition.LEFT}
