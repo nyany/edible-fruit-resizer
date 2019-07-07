@@ -33,22 +33,22 @@ const Resizer: React.FC<ResizerProps> = ({
 	maxSize = null,
 }) => {
 	const resizableElement = useRef<HTMLDivElement>(null);
-	const [resizingState, dispatch] = useResizing();
+	const [resizingState, resize] = useResizing();
 	const [size, setSize] = useState<number>(0);
 	const styles = useResizingStyles(draggableAreaPosition, size, minSize, maxSize);
 
-	useMouseDragging(draggableAreaPosition, resizingState, setSize, () => dispatch({ type: 'stop' }));
+	useMouseDragging(draggableAreaPosition, resizingState, setSize, () => resize({ type: 'stop' }));
 
 	const onMouseDown = (e: React.MouseEvent) => {
 		if (resizableElement.current) {
 			if (isHorizontal(draggableAreaPosition)) {
-				dispatch({
+				resize({
 					type: 'start',
 					startPosition: e.clientX,
 					startSize: resizableElement.current.getBoundingClientRect().width,
 				});
 			} else {
-				dispatch({
+				resize({
 					type: 'start',
 					startPosition: e.clientY,
 					startSize: resizableElement.current.getBoundingClientRect().height,

@@ -174,6 +174,11 @@ module.exports = function(webpackEnv) {
               .replace(/\\/g, '/')
         : isEnvDevelopment &&
           (info => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')),
+
+      library: 'someLibName',
+      libraryTarget: 'umd',
+      filename: 'someLibName.js',
+      auxiliaryComment: 'Test Comment'
     },
     optimization: {
       minimize: isEnvProduction,
