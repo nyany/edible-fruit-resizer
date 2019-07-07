@@ -1,32 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Resizer component
+
+**DEMO:** see Storybook at https://elastic-lichterman-fce1e0.netlify.com/
+
+It's a React component that wraps children with a dragbar that allows user to change its size (height or width) by dragging their mouse.
+
+Component itself is inside `src/lib` folder. Storybook stories are inside `stories` (if worth reading). The rest is boilerplate from CRA.
 
 
+Usage example:
 
+```xml
+<div>
+	<Resizer
+		draggableAreaPosition={DraggableAreaPosition.LEFT}
+		minSize={200}
+		maxSize={500}
+	>
+		<Something />
+	</Resizer>
+
+	<SomethingElse />
+</div>
+```
+
+Props are:
+
+| Prop |  type |  default |  description  | required |
+|---|---|---|---|---|
+| `minSize`  | number  | 200  |  minimum size in px | no |
+| `maxSize` | number | none  |  maximum size in px | no |
+| `draggableAreaPosition` | DraggableAreaPosition | RIGHT |  position of the dragbar  | no |
+| `children` | --- | --- | React children | --- |
+
+___
 
 ## Available Scripts
 
-In the project directory, you can run:
-
-### `yarn run start`
-
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+First, install dependencies by running `yarn`. Then, in the project directory, you can run:
 
 ### `yarn run test`
 
 Launches the test runner in the interactive watch mode.<br>
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn run build`
+### `yarn run storybook`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Runs storybook dev server at [http://localhost:6006](http://localhost:6006)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### `yarn run start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+___
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
