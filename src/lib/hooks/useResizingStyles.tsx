@@ -7,6 +7,8 @@ interface ResizingStyles {
 }
 
 /**
+ * Class names for Resizer
+ *
  * @see `Resizer.css`
  * @param pos position of draggable area
  */
@@ -31,7 +33,7 @@ const classNames = (pos: DraggableAreaPosition): string => {
 const widthInPx = (size: number | null) => (size !== null ? `${size}px` : 'none');
 
 /**
- * Styles for React element
+ * CSS styles for Resizer
  *
  * @param draggableAreaPosition
  * @param size
@@ -49,7 +51,7 @@ const styles = (
 		: { height: widthInPx(size), minHeight: widthInPx(minSize), maxHeight: widthInPx(maxSize) };
 
 /**
- * React hook
+ * React hook for Resizer component returning classnames and CSS styles
  *
  * @param draggableAreaPosition
  * @param size actual size

@@ -6,6 +6,7 @@ export type ResizingState = {
 	isDragging?: boolean;
 };
 
+// The only two possible action types
 type StartResizing = { type: 'start'; startSize: number; startPosition: number };
 type StopResizing = { type: 'stop' };
 

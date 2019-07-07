@@ -45,12 +45,14 @@ const useMouseDragging = (
 
 		/**
 		 * class name for document.body that sets dragging cursor on every element.
-		 * otherwise there is noticeable "tearing".
+		 * otherwise there can be noticeable "tearing".
 		 *
 		 * @see `Resizer.css`
 		 */
 		const cursorClass = isHorizontal(draggableAreaPosition) ? 'dragging-cursor-ew' : 'dragging-cursor-ns';
 
+		// use global addEventListeners, so that user can release mouse on any place of the screen,
+		// of course, unless some elements stop propagation.
 		window.addEventListener('mousemove', onMouseMove);
 		window.addEventListener('mouseleave', onStopDragging);
 		window.addEventListener('mouseup', onStopDragging);
@@ -61,10 +63,12 @@ const useMouseDragging = (
 		document.body.classList.add(cursorClass);
 
 		return () => {
+			// remove previously attached listeners
 			window.removeEventListener('mousemove', onMouseMove);
 			window.removeEventListener('mouseleave', onStopDragging);
 			window.removeEventListener('mouseup', onStopDragging);
 
+			// remove previously added classes
 			document.body.classList.remove('no-user-selection');
 			document.body.classList.remove(cursorClass);
 		};
